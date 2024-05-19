@@ -6,11 +6,6 @@ import SearchPage from './pages/searchPage'
 import GifPage from './pages/singleGif'
 import FavoritePage from './pages/favorite'
 import CategoriesPage from './pages/categoriesPage'
-//homepage
-//categories page
-//search page
-//single gif page
-//favorite page
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
