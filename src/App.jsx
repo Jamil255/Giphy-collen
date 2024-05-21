@@ -1,40 +1,36 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './App.css'
-import AppLayout from './layouts/AppLayout'
-import Home from './pages/homepage'
-import SearchPage from './pages/searchPage'
-import GifPage from './pages/singleGif'
-import FavoritePage from './pages/favorite'
-import CategoriesPage from './pages/categoriesPage'
-import GifProvider from './context/gif-context.jsx'
+
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
+
     children: [
       {
         path: '/',
         element: <Home />,
       },
       {
+        path: '/:type/:slug',
+        element: <GifPage />,
+      },
+      {
+        path: '/:category',
+        element: <Category />,
+      },
+      {
         path: '/search/:query',
         element: <SearchPage />,
       },
       {
-        path: '/type/:slug',
-        element: <GifPage />,
-      },
-      {
-        path: '/favorite',
-        element: <FavoritePage />,
-      },
-      {
-        path: '/:categories',
-        element: <CategoriesPage />,
+        path: '/favorites',
+        element: <Favorites />,
       },
     ],
   },
 ])
-function App() {
+
+const App = () => {
   return (
     <GifProvider>
       <RouterProvider router={router} />
