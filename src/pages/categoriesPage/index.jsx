@@ -1,19 +1,23 @@
-import { useEffect, useState } from 'react'
+// Category.jsx
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import FollowOn from '../../components/FollowOn'
-import GifState from '../../context/gif-context'
+import { GifState } from '../../context/gif-context'
 import Gif from '../../components/gif/Gif'
+
 const Category = () => {
   const [searchResults, setSearchResults] = useState([])
-
-  const { gf } = GifState()
-
+  const { gf } = GifState() // Destructure gf from GifState
+  console.log('Category: gf context value:', gf) // Add log
   const { category } = useParams()
 
   const fetchSearchResults = async () => {
-    const { data } = await gf.gifs(category, category)
-
-    setSearchResults(data)
+    try {
+      const { data } = await gf.gifs(category, category)
+      setSearchResults(data)
+    } catch (error) {
+      console.log(error.message)
+    }
   }
 
   useEffect(() => {
