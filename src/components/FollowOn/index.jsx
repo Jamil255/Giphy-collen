@@ -1,5 +1,6 @@
 import { FaGithub } from 'react-icons/fa'
-import { FaInstagram, FaXTwitter,  } from 'react-icons/fa6'
+import { FaInstagram, FaXTwitter } from 'react-icons/fa6'
+import { TiSocialAtCircular } from 'react-icons/ti'
 
 const FollowOn = () => {
   return (
@@ -11,11 +12,11 @@ const FollowOn = () => {
         <a href="https://github.com/Jamil255">
           <FaGithub size={20} />
         </a>
-        <a href="https://www.instagram.com/roadsidecoder">
+        <a href="https://www.instagram.com/jamilafzal8/">
           <FaInstagram size={20} />
         </a>
-        <a href="https://www.twitter.com/piyush_eon">
-          <FaXTwitter size={20} />
+        <a href="https://jamilafzaldev.netlify.app/">
+          <TiSocialAtCircular size={20} />
         </a>
       </div>
     </div>
