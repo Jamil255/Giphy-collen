@@ -27,7 +27,7 @@ const Home = () => {
       <FilterGif showTrending />
       <div className="columns-2 md:columns-3 lg:colums-4 xl:colums-5 gap-2">
         {gifs?.map((gif) => {
-          return <Gif gif={gif} key={gif?.title} />
+          return <Gif gif={gif} key={gif?.id} />
         })}
       </div>
     </div>
